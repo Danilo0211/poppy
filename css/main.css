@@ -1,0 +1,736 @@
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Screen Reader Text
+--------------------------------------------- */
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus {
+  clip: auto !important;
+  height: auto;
+  width: auto;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 15px 23px 14px;
+  color: #333;
+  background: #fff;
+  z-index: 100000;
+  text-decoration: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+pre {
+  background: #191919;
+  color: #fff;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.5em 0.8em;
+}
+h1 {
+  margin: 0;
+}
+aside {
+  font-size: 0.9rem;
+}
+/*--------------------------------------------------------------
+Images
+--------------------------------------------------------------*/
+figure {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+.site {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 1400px;
+}
+.masthead {
+  background: linear-gradient(135deg, #06baf0, #48c9e8);
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+.masthead h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.masthead,
+.page-title,
+.main-content,
+.sidebar,
+.footer-content {
+  color: #292929;
+  padding: 1em;
+}
+
+.page-title {
+   background: linear-gradient(135deg, #ed68ba, #751c5d);
+  grid-column: 1 / 4;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+.page-title h1 {
+  margin: 10px 0 0;
+  color: #292929;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+.page-title img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin: 15px auto;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+.main-content {
+  background-color: #fdfcfc;
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   violet SIDEBAR
+   ========================================= */
+
+.sidebar {
+  background-color: #fff8fc;
+  grid-column: 2/4;
+  grid-row: 3/4;
+  border-left: 2px solid #f3c6dc;
+}
+.footer-content {
+  background-color: #549cac;
+  grid-column: 1 / span 3;
+}
+/*--------------------------------------------------------------
+violet Chat
+--------------------------------------------------------------*/
+
+
+
+/* =========================================
+   violet CHAT HEADER
+   ========================================= */
+
+.chat-header {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.chat-header h2 {
+  margin: 0 0 0.5rem;
+  color: #c2185b;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.chat-header p {
+  margin: 0;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.violet-message p {
+  margin: 0;
+}
+
+#violet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* =========================================
+   violet CHAT FORM INPUTS
+   ========================================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid #e2d5dc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #c2185b;
+  box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.12);
+}
+
+/* =========================================
+   SEND TO violet BUTTON
+   ========================================= */
+
+#violet-submit {
+  align-self: center;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 25px;
+  background: #c2185b;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+#violet-submit:hover {
+  background: #ad1457;
+  transform: scale(1.05);
+}
+
+.violet-response {
+  display: none;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  border-bottom-left-radius: 4px;
+}
+/*--------------------------------------------------------------
+violet Profile
+--------------------------------------------------------------*/
+
+.violet-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.violet-profile h2 {
+  margin: 0;
+  text-align: center;
+}
+
+/* =========================================
+   violet MAIN PROFILE PHOTO
+   ========================================= */
+
+.violet-photo {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.violet-photo img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.violet-photo img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* =========================================
+   violet PROFILE INFORMATION
+   ========================================= */
+
+.violet-info {
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #f1d5e2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.violet-info p {
+  margin: 0;
+  padding: 10px 5px;
+  color: #444;
+  line-height: 1.6;
+  border-bottom: 1px solid #eeeeee;
+}
+.violet-info p:not(:last-child) {
+  background-color: #fffafb;
+  border-radius: 8px;
+}
+.violet-info p:last-child {
+  border-bottom: none;
+}
+
+.violet-favorites h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #c2185b;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.violet-favorites li {
+  margin-bottom: 0.7rem;
+  padding: 9px 10px;
+  color: #444;
+  line-height: 1.5;
+  border-bottom: 1px solid #eeeeee;
+}
+.violet-favorites li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/*--------------------------------------------------------------
+Violet Chat Window
+--------------------------------------------------------------*/
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 300px;
+  max-height: 450px;
+  padding: 1.5rem;
+  background-color: #fffafb;
+  border: 2px solid #f3c6dc;
+  border-radius: 18px;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 16px;
+  line-height: 1.5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.message p {
+  margin: 0.3rem 0 0;
+}
+
+/* =========================================
+   VIOLET CHAT MESSAGE
+   ========================================= */
+
+.violet-message {
+  align-self: flex-start;
+  background-color: #fce4ec;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #f3c6dc;
+  color: #4a2a35;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   VISITOR CHAT MESSAGE
+   ========================================= */
+
+.visitor-message {
+  align-self: flex-end;
+  background-color: #e3f2fd;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #bbdefb;
+  color: #263238;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   SECRET SURPRISE
+   ========================================= */
+
+.secret-surprise {
+  margin-top: 30px;
+  padding: 30px;
+  background: #fff8fc;
+  border: 2px solid #f3c6dc;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* =========================================
+   SECRET SURPRISE HEADER
+   ========================================= */
+
+.surprise-header {
+  padding-bottom: 10px;
+}
+
+.surprise-header h2 {
+  margin: 0 0 10px;
+  color: #c2185b;
+  font-size: 1.8rem;
+}
+
+.surprise-header p {
+  margin: 0 0 25px;
+  color: #666;
+}
+
+/* =========================================
+   SECRET SURPRISE BOX
+   ========================================= */
+
+.surprise-box {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #f3c6dc;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Locked message */
+
+#surprise-locked h3 {
+  margin-top: 0;
+  color: #444;
+}
+
+#surprise-locked p {
+  margin-bottom: 20px;
+}
+
+/* Surprise button */
+
+#surprise-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: #c2185b;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+#continue-surprise {
+  margin-top: 15px;
+  padding: 11px 22px;
+  border: 2px solid #c2185b;
+  border-radius: 25px;
+  background: white;
+  color: #c2185b;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#continue-surprise:hover {
+  background: #c2185b;
+  color: white;
+  transform: scale(1.05);
+}
+
+#final-surprise {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #f1d5e2;
+  animation: surpriseReveal 0.8s ease;
+}
+
+#final-surprise h3 {
+  color: #c2185b;
+}
+
+#final-surprise-message {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+#surprise-button:hover {
+  background: #ad1457;
+  transform: scale(1.05);
+}
+
+/* Hidden surprise */
+
+#surprise-message {
+  animation: surpriseReveal 0.8s ease;
+}
+
+#surprise-message h3 {
+  color: #c2185b;
+  font-size: 1.6rem;
+}
+
+#personal-surprise-message {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.surprise-signature {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #c2185b;
+}
+
+/* Reveal animation */
+
+@keyframes surpriseReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================
+   SURPRISE CELEBRATION
+   ========================================= */
+
+.surprise-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.celebration {
+  position: absolute;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: floatAway 2s ease-out forwards;
+}
+
+@keyframes floatAway {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(1.4);
+  }
+}
+/* =========================================
+   RESET VIOLET MEMORY
+   ========================================= */
+
+.reset-memory {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* =========================================
+   NEW VISITOR BUTTON
+   ========================================= */
+
+#reset-memory-button {
+  display: inline-block;
+  min-width: 240px;
+  padding: 14px 28px;
+  border: 2px solid #ddd;
+  border-radius: 28px;
+  background: #ffffff;
+  color: #666;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              background 0.2s ease;
+}
+
+#reset-memory-button:hover {
+  background: #fff8fc;
+  color: #c2185b;
+  border-color: #c2185b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+/* =========================================
+   VIOLET PHOTO GALLERY
+   ========================================= */
+
+.violet-gallery h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #c2185b;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.gallery-images img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* =========================================
+   VIOLET GALLERY HOVER EFFECT
+   ========================================= */
+
+.gallery-images img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   VIOLET GALLERY CAPTIONS
+   ========================================= */
+
+
+
+.gallery-images figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #555;
+  line-height: 1.4;
+}
+/* =========================================
+   VIOLET GALLERY PHOTO CARDS
+   ========================================= */
+.gallery-images figure {
+  padding: 10px;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #f1d5e2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================================
+   VIOLET GALLERY - MOBILE
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+
+  .gallery-images {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   VIOLET'S FAVORITE THINGS
+   ========================================= */
+
+.violet-favorites {
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #f1d5e2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.violet-favorites h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #c2185b;
+}
+
+.violet-favorites ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+/* =========================================
+   VIOLET'S GALLERY CARD
+   ========================================= */
+
+.violet-gallery {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #f1d5e2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.violet-gallery h3 {
+  margin-top: 0;
+  color: #c2185b;
+}
+/* =========================================
+   violet CHAT CARD
+   ========================================= */
+
+.violet-chat {
+  padding: 25px;
+  background: #ffffff;
+  border: 2px solid #f3c6dc;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
